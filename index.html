@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Projet Personnel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @keyframes jump {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        @keyframes move {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(100px); }
+        }
+        .jumping-frog {
+            animation: jump 2s infinite;
+        }
+        .moving-saw {
+            animation: move 2s linear infinite alternate;
+        }
+        .code-block {
+            font-family: 'Courier New', monospace;
+            background-color: #2d3748;
+            color: #f7fafc;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+        }
+        .lily-pad {
+            transition: all 0.3s ease;
+        }
+        .lily-pad:hover {
+            transform: scale(1.1);
+        }
+        .platform {
+            transition: all 0.5s ease;
+        }
+        .platform:hover {
+            transform: translateX(20px);
+        }
+    </style>
+</head>
+<body class="bg-green-50 min-h-screen">
+    <!-- Header -->
+    <header class="bg-green-600 text-white py-8 px-4 shadow-lg">
+        <div class="container mx-auto text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-2">Mon Projet Personnel</h1>
+            <h2 class="text-2xl md:text-3xl font-semibold">Jump Frog : Fait par Mohamed Makhlouf</h2>
+            
+            <!-- Animated Frog SVG -->
+            <div class="flex justify-center mt-6">
+                <svg class="jumping-frog w-24 h-24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="40" fill="#4CAF50" />
+                    <circle cx="35" cy="40" r="5" fill="#000" />
+                    <circle cx="65" cy="40" r="5" fill="#000" />
+                    <path d="M40 65 Q50 75 60 65" stroke="#000" stroke-width="2" fill="none" />
+                    <ellipse cx="30" cy="30" rx="3" ry="2" fill="#fff" />
+                    <ellipse cx="70" cy="30" rx="3" ry="2" fill="#fff" />
+                    <path d="M20 70 L30 80" stroke="#4CAF50" stroke-width="4" />
+                    <path d="M80 70 L70 80" stroke="#4CAF50" stroke-width="4" />
+                </svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12">
+        <!-- About Section -->
+        <section class="mb-16 bg-white rounded-xl shadow-md p-6">
+            <h2 class="text-3xl font-bold text-green-700 mb-6">À propos du projet</h2>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <p class="text-gray-700 mb-4">
+                        Jump Frog est un jeu de plateforme dynamique où vous contrôlez une grenouille qui doit naviguer à travers des obstacles pour atteindre le drapeau de fin de niveau.
+                    </p>
+                    <p class="text-gray-700 mb-4">
+                        Le jeu propose des mécaniques variées avec une difficulté progressive pour un challenge toujours plus intense.
+                    </p>
+                    <div class="flex space-x-4 mt-6">
+                        <div class="bg-green-100 p-4 rounded-lg">
+                            <i class="fas fa-gamepad text-green-600 text-2xl mb-2"></i>
+                            <h3 class="font-bold">Contrôles précis</h3>
+                        </div>
+                        <div class="bg-green-100 p-4 rounded-lg">
+                            <i class="fas fa-code text-green-600 text-2xl mb-2"></i>
+                            <h3 class="font-bold">Code optimisé</h3>
+                        </div>
+                        <div class="bg-green-100 p-4 rounded-lg">
+                            <i class="fas fa-chart-line text-green-600 text-2xl mb-2"></i>
+                            <h3 class="font-bold">Progression</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" class="w-64 h-64">
+                        <rect x="20" y="160" width="160" height="20" fill="#6B7280" rx="2" />
+                        <rect x="60" y="120" width="80" height="40" fill="#6B7280" rx="2" />
+                        <rect x="80" y="80" width="40" height="40" fill="#6B7280" rx="2" />
+                        <circle cx="50" cy="140" r="15" fill="#4CAF50" />
+                        <circle cx="150" cy="140" r="15" fill="#4CAF50" />
+                        <circle cx="100" cy="60" r="15" fill="#4CAF50" />
+                        <path d="M180 40 L160 60 L170 50 L160 40 Z" fill="#EF4444" />
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section class="mb-16 bg-white rounded-xl shadow-md p-6">
+            <h2 class="text-3xl font-bold text-green-700 mb-6">Comment ça marche</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-green-50 p-6 rounded-lg">
+                    <div class="text-center mb-4">
+                        <div class="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full">
+                            <i class="fas fa-keyboard text-green-600 text-2xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-3">Contrôles</h3>
+                    <p class="text-gray-700">
+                        Utilisez les touches <span class="font-bold">A/D</span> ou <span class="font-bold">←/→</span> pour déplacer la grenouille et <span class="font-bold">Espace</span> pour sauter. Attention aux obstacles !
+                    </p>
+                </div>
+                <div class="bg-green-50 p-6 rounded-lg">
+                    <div class="text-center mb-4">
+                        <div class="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full">
+                            <i class="fas fa-flag text-green-600 text-2xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-3">Objectif</h3>
+                    <p class="text-gray-700">
+                        Atteignez le drapeau à la fin de chaque niveau. La difficulté augmente progressivement avec de nouveaux obstacles et plateformes mobiles.
+                    </p>
+                </div>
+                <div class="bg-green-50 p-6 rounded-lg">
+                    <div class="text-center mb-4">
+                        <div class="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full">
+                            <i class="fas fa-banana text-yellow-500 text-2xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-3">Score</h3>
+                    <p class="text-gray-700">
+                        Collectez des bananes pendant votre parcours pour augmenter votre score. Chaque banane rapporte des points bonus !
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Section -->
+        <section class="mb-16 bg-white rounded-xl shadow-md p-6">
+            <h2 class="text-3xl font-bold text-green-700 mb-6">Comment c'est codé</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Technologies utilisées</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fab fa-html5 text-orange-500 mt-1 mr-3"></i>
+                            <span>HTML5 pour la structure du jeu</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fab fa-css3-alt text-blue-500 mt-1 mr-3"></i>
+                            <span>CSS3 pour le style et les animations</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fab fa-js-square text-yellow-500 mt-1 mr-3"></i>
+                            <span>JavaScript pur pour la logique du jeu</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-mobile text-purple-500 mt-1 mr-3"></i>
+                            <span>Approche mobile-first pour la compatibilité</span>
+                        </li>
+                    </ul>
+                    
+                    <h3 class="text-xl font-semibold mt-8 mb-4">Fonctionnalités clés</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="bg-green-100 text-green-800 rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-1 flex-shrink-0">1</div>
+                            <p>Système de mouvement fluide avec gestion de la gravité</p>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-green-100 text-green-800 rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-1 flex-shrink-0">2</div>
+                            <p>Détection de collision précise pour tous les éléments</p>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-green-100 text-green-800 rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-1 flex-shrink-0">3</div>
+                            <p>Génération procédurale des niveaux avec difficulté progressive</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Extrait de code</h3>
+                    <p class="text-gray-700 mb-3">Voici un extrait du code JavaScript qui gère les contrôles et les collisions :</p>
+                    <div class="code-block">
+                        <pre><code class="text-sm">// Gestion des contrôles
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft' || e.key === 'a') {
+        frogDirection = -1; // Déplacement gauche
+    }
+    if (e.key === 'ArrowRight' || e.key === 'd') {
+        frogDirection = 1; // Déplacement droite
+    }
+    if (e.code === 'Space' && isGrounded) {
+        frogVelocity = jumpForce; // Saut
+    }
+});
+
+// Détection de collision avec les bananes
+function checkBananaCollision() {
+    bananas.forEach((banana, index) => {
+        if (Math.abs(frogX - banana.x) < 20 && 
+            Math.abs(frogY - banana.y) < 20) {
+            score += 10;
+            bananas.splice(index, 1);
+            playCollectSound();
+        }
+    });
+}
+
+// Vérification de la victoire (drapeau)
+function checkWinCondition() {
+    if (Math.abs(frogX - flagX) < 30 && 
+        Math.abs(frogY - flagY) < 50) {
+        levelComplete();
+    }
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Game Elements Showcase -->
+        <section class="mb-16 bg-white rounded-xl shadow-md p-6">
+            <h2 class="text-3xl font-bold text-green-700 mb-6">Éléments du jeu</h2>
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="text-center">
+                    <div class="lily-pad inline-block mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="w-24 h-24">
+                            <circle cx="50" cy="50" r="40" fill="#8BC34A" />
+                            <circle cx="50" cy="50" r="30" fill="#7CB342" />
+                            <ellipse cx="50" cy="50" rx="25" ry="15" fill="#689F38" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold">Plateformes</h3>
+                    <p class="text-gray-700">Surfaces stables pour se reposer</p>
+                </div>
+                <div class="text-center">
+                    <div class="inline-block mb-4">
+                        <svg class="w-24 h-24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="40" fill="#4CAF50" />
+                            <circle cx="35" cy="40" r="5" fill="#000" />
+                            <circle cx="65" cy="40" r="5" fill="#000" />
+                            <path d="M40 65 Q50 75 60 65" stroke="#000" stroke-width="2" fill="none" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold">Grenouille</h3>
+                    <p class="text-gray-700">Personnage principal du jeu</p>
+                </div>
+                <div class="text-center">
+                    <div class="inline-block mb-4 moving-saw">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="w-24 h-24">
+                            <circle cx="50" cy="50" r="30" fill="#B0BEC5" />
+                            <circle cx="50" cy="50" r="20" fill="#78909C" />
+                            <path d="M50 20 L50 80 M20 50 L80 50 M35 35 L65 65 M35 65 L65 35" 
+                                  stroke="#E53935" stroke-width="5" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold">Scies</h3>
+                    <p class="text-gray-700">Obstacles mortels qui se déplacent</p>
+                </div>
+                <div class="text-center">
+                    <div class="inline-block mb-4 platform">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 50" class="w-24 h-12">
+                            <rect x="10" y="20" width="80" height="10" fill="#5D4037" rx="2" />
+                            <path d="M20 30 L30 40 M40 30 L50 40 M60 30 L70 40" 
+                                  stroke="#3E2723" stroke-width="2" />
+                            <path d="M30 15 L40 25 M50 15 L60 25" 
+                                  stroke="#FFC107" stroke-width="3" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold">Plateformes mobiles</h3>
+                    <p class="text-gray-700">Vous transportent automatiquement</p>
+                </div>
+                <div class="text-center">
+                    <div class="inline-block mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="w-24 h-24">
+                            <path d="M50 20 L30 80 L70 80 Z" fill="#FFC107" />
+                            <path d="M50 35 L45 50 L55 50 Z" fill="#5D4037" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold">Bananes</h3>
+                    <p class="text-gray-700">À collecter pour augmenter votre score</p>
+                </div>
+                <div class="text-center">
+                    <div class="inline-block mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="w-24 h-24">
+                            <rect x="45" y="20" width="10" height="60" fill="#E53935" />
+                            <path d="M50 20 L30 40 L70 40 Z" fill="#E53935" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold">Drapeau</h3>
+                    <p class="text-gray-700">Objectif à atteindre pour finir le niveau</p>
+                </div>
+                <div class="text-center">
+                    <div class="inline-block mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="w-24 h-24">
+                            <rect x="20" y="80" width="60" height="10" fill="#3F51B5" rx="2" />
+                            <text x="50" y="88" font-family="Arial" font-size="10" fill="white" text-anchor="middle">SCORE: 250</text>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold">Tableau de score</h3>
+                    <p class="text-gray-700">Affiche votre progression</p>
+                </div>
+                <div class="text-center">
+                    <div class="inline-block mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="w-24 h-24">
+                            <rect x="20" y="60" width="60" height="30" fill="#424242" rx="2" />
+                            <text x="50" y="80" font-family="Arial" font-size="10" fill="white" text-anchor="middle">NIVEAU 3</text>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold">Indicateur de niveau</h3>
+                    <p class="text-gray-700">Montre la difficulté actuelle</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Play Section -->
+    <section class="bg-green-700 text-white py-12 px-4">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-6">Prêt à jouer ?</h2>
+            <p class="text-xl mb-8">Testez maintenant Jump Frog et voyez si vous pouvez atteindre le drapeau !</p>
+            <a href="https://yuhanpizza.github.io/JumpFrog-Game/" class="inline-block bg-yellow-400 hover:bg-yellow-500 text-green-900 font-bold py-3 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105 shadow-lg">
+                Jouer maintenant <i class="fas fa-play ml-2"></i>
+            </a>
+            <p class="mt-4 text-green-200">Lieu pour jouer : <a href="https://yuhanpizza.github.io/JumpFrog-Game/" class="underline">https://yuhanpizza.github.io/JumpFrog-Game/</a></p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-green-800 text-white py-8 px-4">
+        <div class="container mx-auto text-center">
+            <p class="mb-4">Jump Frog - Un projet développé par Mohamed Makhlouf</p>
+            <div class="flex justify-center space-x-6">
+                <a href="#" class="text-white hover:text-green-300">
+                    <i class="fab fa-github text-2xl"></i>
+                </a>
+                <a href="#" class="text-white hover:text-green-300">
+                    <i class="fab fa-twitter text-2xl"></i>
+                </a>
+                <a href="#" class="text-white hover:text-green-300">
+                    <i class="fab fa-linkedin text-2xl"></i>
+                </a>
+            </div>
+            <p class="mt-6 text-green-300 text-sm">© 2023 Tous droits réservés</p>
+        </div>
+    </footer>
+</body>
+</html>
